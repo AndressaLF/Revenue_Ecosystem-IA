@@ -1,15 +1,43 @@
+# =============================================================================
+# Repositório público mínimo (GitHub Pages + cadastro Reddit API)
+# Versionados: README.md, docs/index.html, .gitignore
+# =============================================================================
+
+# Cursor / IDE
+.cursorrules
+.cursor/
+
+# Código e testes (desenvolvimento local)
+modules/
+shared_components/
+tests/
+requirements.txt
+config/
+
+# Documentação interna (exceto landing Pages)
+docs/*
+!docs/index.html
+
+# Secrets e ambiente
+.env
+.env.local
+.env.*
+.env.example
+secrets/
+
+# Python
 .venv/
 venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
-.env
-.env.local
-.env.*
-!.env.example
-secrets/
+
+# Dados locais
 storage/
 *.db
 modules/*/output/
+
+# OS
 .DS_Store
+Thumbs.db
