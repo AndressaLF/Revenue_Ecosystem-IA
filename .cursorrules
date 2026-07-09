@@ -1,0 +1,38 @@
+# RE-IA — Revenue Ecosystem IA
+# Documentação canônica: docs/README.md (00-vision through 14-deploy)
+
+project_type: Python Modular Revenue Ecosystem
+architecture: Clean Architecture simplified — NO queues, events, or DDD in MVP
+python: "3.11+"
+
+constraints:
+  - Gemini MUST pass through shared_components cache (semantic + hash) before any API call
+  - similarity_threshold: 0.96
+  - embeddings: sentence-transformers on CPU only
+  - no_paid_apis_in_ingestion: true
+  - deterministic_first: true
+  - no_cross_module_imports: true
+
+implementation_order:
+  1. shared_components (cache, database, gemini_client, compliance)
+  2. modules/01_opportunity_finder
+  3. modules/02_affiliate_saas
+  4. modules/03_notion_funnel
+  5. dashboard Streamlit (phase 4 only)
+
+coding:
+  type_hints: required
+  schemas: Pydantic
+  tests: pytest for shared_components
+  format: black + isort
+
+before_coding:
+  - Read relevant doc in docs/ (03-modules for module work)
+  - One backlog item per session (docs/11-backlog.md)
+  - Never add features without ROI justification
+
+prohibited:
+  - DDD, CQRS, event bus, Redis/Celery in MVP
+  - Direct Gemini calls bypassing gemini_client
+  - New modules before revenue from 02 or 03
+  - Paid APIs in data ingestion layer

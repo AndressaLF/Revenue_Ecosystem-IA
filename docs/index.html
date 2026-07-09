@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="RE-IA — modular research system for validating USD affiliate opportunities using public data and AI-assisted workflows." />
+  <title>RE-IA — Revenue Ecosystem IA</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a2332;
+      --text: #e7ecf3;
+      --muted: #9aa8bc;
+      --accent: #3b82f6;
+      --accent2: #10b981;
+      --border: #2a3548;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    header { margin-bottom: 2.5rem; }
+    h1 { font-size: 2rem; margin: 0 0 0.5rem; letter-spacing: -0.02em; }
+    .tagline { color: var(--muted); font-size: 1.1rem; margin: 0; }
+    .badge {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: #1e3a5f;
+      color: #93c5fd;
+      font-size: 0.85rem;
+    }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    h2 { font-size: 1.1rem; margin: 0 0 0.75rem; color: #fff; }
+    p, li { color: var(--muted); margin: 0.5rem 0; }
+    ul { padding-left: 1.25rem; }
+    code {
+      background: #0d1117;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+      color: #7dd3fc;
+    }
+    a { color: var(--accent); }
+    .grid { display: grid; gap: 1rem; }
+    @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+    .ok { color: var(--accent2); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>RE-IA</h1>
+      <p class="tagline">Revenue Ecosystem IA — research &amp; validation for international (USD) affiliate opportunities.</p>
+      <span class="badge">Open documentation · Personal research project</span>
+    </header>
+
+    <section>
+      <h2>About this project</h2>
+      <p>
+        <strong>RE-IA</strong> is a modular Python laboratory that discovers market pain signals,
+        scores opportunities (EPC, audience fit), and assists content production for ethical
+        affiliate workflows in English-speaking (USD) markets.
+      </p>
+      <p>
+        It is <strong>not</strong> a spam bot, vote manipulator, or mass poster. It reads
+        <strong>public</strong> sources to support human-reviewed publishing decisions.
+      </p>
+    </section>
+
+    <div class="grid">
+      <section>
+        <h2>What it does</h2>
+        <ul>
+          <li>Ingest public trend and discussion data (e.g. Reddit JSON, Google Trends)</li>
+          <li>Extract pain signals and transactional intent</li>
+          <li>Rank opportunities with deterministic scoring</li>
+          <li>Generate draft reviews with AI (optional) + FTC disclosure</li>
+        </ul>
+      </section>
+      <section>
+        <h2>What it does not do</h2>
+        <ul>
+          <li>Post affiliate links directly on Reddit</li>
+          <li>Scrape private or logged-in content</li>
+          <li>Store Reddit user passwords</li>
+          <li>Exceed API rate limits (cached, throttled requests)</li>
+        </ul>
+      </section>
+    </div>
+
+    <section>
+      <h2>Reddit API usage</h2>
+      <p>This application uses the Reddit API under the <a href="https://www.redditinc.com/policies/data-api-terms">Reddit Data API Terms</a> for:</p>
+      <ul>
+        <li>Reading <strong>public</strong> subreddit posts and metadata</li>
+        <li>Researching buyer pain and commercial intent (EN, US market)</li>
+        <li>Rate-limited ingestion into a local SQLite database</li>
+      </ul>
+      <p>
+        <strong>User-Agent:</strong>
+        <code>RE-IA/0.1 (affiliate research; +https://YOUR_USERNAME.github.io/re-ia/)</code>
+      </p>
+      <p>
+        <strong>OAuth redirect URI (development):</strong>
+        <code>http://localhost:8080</code>
+      </p>
+      <p class="ok">Contact: open a GitHub issue on the project repository.</p>
+    </section>
+
+    <section>
+      <h2>Stack &amp; license</h2>
+      <p>Python 3.11+, SQLite, optional Google Gemini API for content drafts. Documentation and source on GitHub.</p>
+      <p>
+        Repository:
+        <a id="repo-link" href="https://github.com/YOUR_USERNAME/re-ia">github.com/YOUR_USERNAME/re-ia</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>RE-IA · Revenue Ecosystem IA · Last updated July 2026</p>
+      <p>This page exists to describe the project for API registration and public transparency.</p>
+    </footer>
+  </div>
+</body>
+</html>

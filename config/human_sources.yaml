@@ -1,0 +1,90 @@
+# Fontes manuais (parte humana) — sem API no MVP
+# Contas ativas: Digistore24, ClickBank, Nomad (recebimento)
+
+locale: en-US
+geo: US
+
+weekly_human_routine:
+  monday:
+    - "Digistore24 marketplace: filtrar bestsellers / alta comissão / baixo refund"
+    - "ClickBank: ordenar por Gravity ≥ 20; anotar avg $/sale e EPC do painel"
+    - "Reddit EN: validar dor do nicho escolhido"
+  wednesday:
+    - "Importar 1–3 oportunidades via CLI import-affiliate"
+    - "Testar LP/hoplink (mobile + desktop)"
+  friday:
+    - "Publicar ou agendar Medium; registrar sub-ID no painel"
+    - "Conferir cliques em cada programa; pivot se zero em 7 dias"
+
+digistore24:
+  login: "https://www.digistore24-app.com"
+  research_steps:
+    - "Marketplace → Affiliate → filtrar categoria (health, business, self-help EN)"
+    - "Copiar: nome produto, preço, comissão %, cookie, URL hoplink promocional"
+    - "Verificar: refund rate no painel, materiais de afiliado, LP em inglês"
+    - "Evitar: claims médicos não comprovados, produtos só DE/sem EN"
+  fields_to_copy:
+    - product_name
+    - estimated_price
+    - commission_pct
+    - affiliate_url  # hoplink com seu ID
+    - refund_rate
+  suggested_channels: [medium, youtube]
+  keyword_patterns:
+    - "{product} review"
+    - "{product} worth it"
+    - "alternative to {competitor}"
+
+clickbank:
+  login: "https://accounts.clickbank.com"
+  research_steps:
+    - "Marketplace → Category → ordenar por Gravity"
+    - "Abrir Affiliate Tools: hoplink, gravar gravity, avg $/sale, commission"
+    - "Ler 1ª página de comentários / refund trend se disponível"
+    - "Só promover após assistir VSL ou ler LP completa"
+  fields_to_copy:
+    - product_name
+    - vendor_id
+    - gravity
+    - estimated_price  # avg sale from marketplace
+    - commission_pct
+    - affiliate_url
+    - refund_rate
+  gravity_rules:
+    min_promote: 20
+    ideal: 40
+    saturated_caution: 120
+  suggested_channels: [medium, youtube]
+  keyword_patterns:
+    - "{niche} program review"
+    - "best {niche} course"
+    - "{product} honest review"
+
+amazon_associates:
+  research_steps:
+    - "Best Sellers / Movers & Shakers → Home Office, Kitchen"
+    - "Filtrar $35–$75, rating ≥ 4.2, reviews ≥ 100"
+    - "Gerar link SiteStripe ou Associates link builder"
+  fields_to_copy:
+    - product_name
+    - asin
+    - estimated_price
+    - affiliate_url
+    - rating
+    - reviews
+  suggested_channels: [pinterest, medium]
+
+nomad:
+  role: payout_only
+  steps:
+    - "Cadastrar conta bancária USD ou receber via PIX convertido conforme plano"
+    - "Vincular PayPal/email nos painéis Digistore24 e ClickBank se exigido"
+    - "Amazon Associates: configurar método de pagamento internacional"
+  reconciliation:
+    weekly: "Conferir pending vs paid em cada painel afiliado"
+
+compliance_all:
+  - "FTC disclosure no topo de todo conteúdo com hoplink"
+  - "Sub-ID por canal: ?tid=medium_{opportunity_id} ou parâmetro nativo da plataforma"
+  - "Nunca hoplink bruto em Reddit/Pinterest — sempre ponte Medium/YouTube"
+  - "Digistore24/ClickBank saúde: sem prometer cura; disclaimers obrigatórios"

@@ -1,0 +1,71 @@
+# Contas ativas do operador (atualizar conforme status real)
+operator:
+  nomad:
+    status: active
+    role: recebimento_usd
+    notes: "Conta configurada — receber comissões Digistore24, ClickBank, Amazon"
+  digistore24:
+    status: active
+    role: marketplace_digital
+  clickbank:
+    status: active
+    role: marketplace_digital
+  amazon_associates:
+    status: pending
+    role: marketplace_physical
+    notes: "Criar/aprovar se foco em físicos"
+
+programs:
+  - name: amazon_associates
+    vertical: physical
+    cookie_days: 24
+    commission_pct_min: 1.0
+    commission_pct_max: 3.0
+    commission_pct_default: 3.0
+    payout: nomad_or_paypal
+    conv_rate_est: 0.08
+    funnel: "Pinterest → Medium → Amazon"
+    sub_id_support: true
+    human_research_url: "https://www.amazon.com/gp/movers-and-shakers"
+    cli_import: "import-affiliate --platform amazon"
+
+  - name: digistore24
+    vertical: digital
+    cookie_days: 180
+    commission_pct_min: 10.0
+    commission_pct_max: 30.0
+    commission_pct_default: 20.0
+    payout: nomad
+    conv_rate_est: 0.02
+    funnel: "Medium / YouTube → hoplink → sales page"
+    sub_id_support: true
+    human_research_url: "https://www.digistore24-app.com/app/en/affiliate/account/marketplace"
+    cli_import: "import-affiliate --platform digistore24"
+    filters_human:
+      gravity_min: null
+      refund_rate_max: 0.05
+      avoid: ["FDA claims agressivos", "nichos saturados BR"]
+
+  - name: clickbank
+    vertical: digital
+    cookie_days: 60
+    commission_pct_min: 50.0
+    commission_pct_max: 75.0
+    commission_pct_default: 50.0
+    payout: nomad
+    conv_rate_est: 0.015
+    funnel: "Medium / YouTube → hoplink → VSL ou LP"
+    sub_id_support: true
+    human_research_url: "https://accounts.clickbank.com/marketplace.htm"
+    cli_import: "import-affiliate --platform clickbank"
+    filters_human:
+      gravity_min: 20
+      refund_rate_max: 0.05
+      avg_epc_panel_min: 0.30
+      avoid: ["gravity < 15", "refund > 5%", "produto sem página em inglês"]
+
+payment_rails:
+  - name: nomad
+    currencies: [USD]
+    use_for: [digistore24, clickbank, amazon_associates]
+    min_payout_note: "Verificar mínimo por programa; consolidar receita USD na Nomad"
