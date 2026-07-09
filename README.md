@@ -2,7 +2,8 @@
 
 > *A friendly research lab for discovering and validating **USD affiliate opportunities** — powered by public data, smart scoring, and AI-assisted workflows.* ✨
 
-[![Project status](https://img.shields.io/badge/status-active%20research-blue?style=flat-square)](https://github.com/AndressaLF/re-ia)
+[![Project status](https://img.shields.io/badge/status-active%20research-blue?style=flat-square)](https://github.com/AndressaLF/Revenue_Ecosystem-IA)
+[![Live site](https://img.shields.io/badge/🌐_live_site-GitHub_Pages-purple?style=flat-square)](https://AndressaLF.github.io/Revenue_Ecosystem-IA/)
 [![Market](https://img.shields.io/badge/market-USD%20%7C%20EN-green?style=flat-square)](#)
 [![Ethics](https://img.shields.io/badge/ethics-FTC%20disclosure-orange?style=flat-square)](#-what-we-dont-do)
 
@@ -63,16 +64,20 @@ RE-IA uses the [Reddit Data API](https://www.redditinc.com/policies/data-api-ter
 
 | Field | Value |
 |-------|--------|
-| 📄 **About URL** | `https://AndressaLF.github.io/re-ia/` |
+| 📄 **About URL** | `https://AndressaLF.github.io/Revenue_Ecosystem-IA/` |
 | 🔁 **Redirect URI (dev)** | `http://localhost:8080` |
-| 🏷️ **User-Agent** | `RE-IA/0.1 (affiliate research; +https://AndressaLF.github.io/re-ia/)` |
+| 🏷️ **User-Agent** | `RE-IA/0.1 (affiliate research; +https://AndressaLF.github.io/Revenue_Ecosystem-IA/)` |
 
-> 💡 Replace `AndressaLFE` with your GitHub login before publishing.
+## 🌐 Live project page
 
-**Public project page (GitHub Pages):**  
-👉 [https://AndressaLF.github.io/re-ia/](https://AndressaLF.github.io/re-ia/)
+| Where | URL | What you see |
+|-------|-----|----------------|
+| 📖 **README** (repo home) | [github.com/AndressaLF/Revenue_Ecosystem-IA](https://github.com/AndressaLF/Revenue_Ecosystem-IA) | This document on GitHub |
+| 🌍 **GitHub Pages** (site) | [AndressaLF.github.io/Revenue_Ecosystem-IA](https://AndressaLF.github.io/Revenue_Ecosystem-IA/) | Styled landing page (`docs/index.html`) |
 
-Enable Pages: **Settings → Pages → Branch `main` → Folder `/docs`**
+👉 **From the README:** click the purple **Live site** badge at the top, or the link in the table above.
+
+**First time?** Enable Pages: repo **Settings → Pages → Branch `main` → Folder `/docs` → Save** — wait 1–3 minutes, then open the Pages URL.
 
 ---
 
@@ -86,7 +91,7 @@ Enable Pages: **Settings → Pages → Branch `main` → Folder `/docs`**
 
 ## 📬 Contact & feedback
 
-Questions, ideas, or concerns? Open a **[GitHub Issue](https://github.com/YOUR_USERNAME/re-ia/issues)** — we read every one. 💬
+Questions, ideas, or concerns? Open a **[GitHub Issue](https://github.com/AndressaLF/Revenue_Ecosystem-IA/issues)** — we read every one. 💬
 
 ---
 
