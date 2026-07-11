@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -125,6 +125,25 @@
         <code>http://localhost:8080</code>
       </p>
       <p class="ok">Contact: open a GitHub issue on the project repository.</p>
+    </section>
+
+    <section>
+      <h2>Operations dashboard (local only)</h2>
+      <p>
+        The <strong>Streamlit dashboard</strong> (publish queue, research inbox, Medium wizard)
+        does <strong>not</strong> run on GitHub Pages. It needs your local Python environment,
+        SQLite database, and <code>.env</code> on your machine.
+      </p>
+      <p>After cloning the full project locally:</p>
+      <pre style="background:#0d1117;padding:1rem;border-radius:8px;overflow-x:auto;font-size:0.85rem;color:#7dd3fc;margin:0.75rem 0"><code>python -m venv .venv
+.venv\Scripts\activate          # Windows
+pip install -r requirements.txt
+python -m dashboard</code></pre>
+      <p>Then open <code>http://localhost:8501</code> in your browser.</p>
+      <p class="ok">
+        GitHub Pages (this site) = public transparency for Reddit API registration.
+        Streamlit = private operations on your PC.
+      </p>
     </section>
 
     <section>

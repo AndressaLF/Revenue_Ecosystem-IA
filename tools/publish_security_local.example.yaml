@@ -1,0 +1,14 @@
+# Optional local PII patterns — copy to publish_security_local.yaml (gitignored).
+# The public scanner already loads CLICKBANK_NICKNAME / DIGISTORE24_AFFILIATE_ID from .env.
+#
+# patterns:
+#   - id: local_repo_path
+#     regex: "path[/\\\\]to[/\\\\]your[/\\\\]local[/\\\\]clone"
+#     message: "Caminho local do disco"
+#     ignore_case: true
+#   - id: personal_email
+#     regex: "you@example.com"
+#     message: "E-mail pessoal"
+#     ignore_case: true
+
+patterns: []

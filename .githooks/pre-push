@@ -1,0 +1,29 @@
+#!/bin/sh
+# RE-IA — optional pre-push audit (OFF by default; never blocks unless strict mode).
+set -e
+ROOT="$(git rev-parse --show-toplevel)"
+cd "$ROOT" || exit 1
+
+enabled="$(git config --local --get reia.publishSecurityHook 2>/dev/null || echo false)"
+if [ "$enabled" != "true" ]; then
+  exit 0
+fi
+
+if [ -x "$ROOT/.venv/Scripts/python.exe" ]; then
+  PY="$ROOT/.venv/Scripts/python.exe"
+elif [ -x "$ROOT/.venv/bin/python" ]; then
+  PY="$ROOT/.venv/bin/python"
+else
+  PY=python
+fi
+
+strict="$(git config --local --get reia.publishSecurityStrict 2>/dev/null || echo false)"
+if [ "$strict" = "true" ]; then
+  echo "RE-IA: auditoria de segurança (pre-push, modo estrito)..."
+  "$PY" "$ROOT/tools/publish_security_check.py" --repo "$ROOT"
+  exit $?
+fi
+
+echo "RE-IA: auditoria de segurança (pre-push, só aviso — push permitido)..."
+"$PY" "$ROOT/tools/publish_security_check.py" --repo "$ROOT" --warn-only
+exit 0

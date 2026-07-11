@@ -1,29 +1,47 @@
 # =============================================================================
 # Repositório público mínimo (GitHub Pages + cadastro Reddit API)
-# Versionados: README.md, docs/index.html, .gitignore
+# Versionados no GitHub: README.md, docs/index.html, .gitignore
+# Todo o resto permanece só no clone local.
 # =============================================================================
 
-# Cursor / IDE
+# Cursor / IDE (paths pessoais)
 .cursorrules
 .cursor/
+.vscode/
 
-# Código e testes (desenvolvimento local)
+# Código, testes e UI local (Streamlit não roda no GitHub Pages)
 modules/
 shared_components/
 tests/
+dashboard/
 requirements.txt
 config/
+scripts/
+prompts/
 
-# Documentação interna (exceto landing Pages)
+# Documentação interna — só landing pública no Pages
 docs/*
 !docs/index.html
 
-# Secrets e ambiente
+# README em PT fica local (mirror EN no GitHub)
+README.pt-BR.md
+
+# Secrets e ambiente — NUNCA commitar
 .env
 .env.local
+.env.development
+.env.production
 .env.*
-.env.example
+!.env.example
 secrets/
+*.pem
+*.key
+credentials.json
+**/credentials.json
+service-account*.json
+
+# PII patterns locais do scanner (nunca no mirror público)
+tools/publish_security_local.yaml
 
 # Python
 .venv/
@@ -32,12 +50,28 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
+.streamlit/
 
-# Dados locais
+# Dados locais e artefatos com hoplinks / IDs de oportunidade
 storage/
 *.db
+**/output/
 modules/*/output/
+*.meta.json
+*_pre_publish_report.json
+*_publish_checklist_*.md
+
+# Sites e assets gerados
+siftedblue-site/
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Export de sessão Cursor — nicknames, paths, contexto operacional
+cursor*.md
+cursor_*.md
+cursor_avalie_a_documenta_o_na_pasta_do.md
+
+# Auditoria pre-push (versionar no mirror público)
+# tools/ e .githooks/ ficam FORA desta lista — devem ir ao GitHub
